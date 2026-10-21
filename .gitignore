@@ -1,0 +1,22 @@
+# ---- 敏感信息：绝不提交 ----
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+credentials.json
+secrets.json
+*.token
+
+# ---- 依赖与构建产物 ----
+node_modules/
+dist/
+build/
+
+# ---- 系统与编辑器 ----
+.DS_Store
+Thumbs.db
+*.log

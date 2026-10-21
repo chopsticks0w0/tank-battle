@@ -1,0 +1,143 @@
+/* ============================================================
+   坦克大战 — 样式表
+   ============================================================ */
+
+/* 全局重置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 页面背景：深色，居中显示游戏 */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 20%, #23233b 0%, #14141f 70%);
+  color: #e8e8f0;
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+}
+
+/* 游戏容器：文字居中 */
+#game {
+  text-align: center;
+  padding: 16px;
+}
+
+/* 顶部信息栏 */
+#hud {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+.hud-item {
+  background: #26263a;
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: 1px solid #3a3a55;
+}
+
+/* 生命值用红心表示 */
+.lives {
+  color: #ff5a5a;
+  letter-spacing: 2px;
+}
+
+#score {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+#enemies {
+  color: #7bd0ff;
+  font-weight: bold;
+}
+
+/* 舞台：相对定位，用于承载绝对定位的遮罩层 */
+#stage {
+  position: relative;
+  width: min(92vw, 78vh);   /* 保证正方形画布在小屏上也能完整显示 */
+}
+
+/* 画布：随舞台宽度等比缩放 */
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #10101a;
+  border: 3px solid #3a3a55;
+  border-radius: 6px;
+  image-rendering: pixelated; /* 缩放时保持像素风 */
+}
+
+/* 胜负遮罩层：默认隐藏 */
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 6px;
+}
+
+#overlay.hidden {
+  display: none;
+}
+
+/* 提示面板 */
+.panel {
+  background: #2c2c44;
+  padding: 30px 44px;
+  border-radius: 14px;
+  border: 1px solid #4a4a66;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.panel h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.panel p {
+  color: #c9c9da;
+  margin-bottom: 8px;
+}
+
+/* 重新开始按钮 */
+.panel button {
+  margin-top: 14px;
+  padding: 10px 28px;
+  font-size: 18px;
+  font-family: inherit;
+  color: #fff;
+  background: #e63946;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.panel button:hover {
+  background: #ff5562;
+}
+
+.panel button:active {
+  transform: scale(0.96);
+}
+
+/* 底部操作提示 */
+#controls {
+  margin-top: 14px;
+  color: #9a9ab0;
+  font-size: 14px;
+}
+
+#controls b {
+  color: #d8d8e8;
+}

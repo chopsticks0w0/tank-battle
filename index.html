@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>坦克大战 · 原生 HTML/CSS/JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 游戏主容器 -->
+  <div id="game">
+    <!-- 顶部信息栏：生命 / 得分 / 剩余敌人 -->
+    <div id="hud">
+      <div class="hud-item">生命 <span id="lives" class="lives">♥♥♥</span></div>
+      <div class="hud-item">得分 <span id="score">0</span></div>
+      <div class="hud-item">剩余敌人 <span id="enemies">0</span></div>
+    </div>
+
+    <!-- 画布舞台 + 胜负遮罩层 -->
+    <div id="stage">
+      <canvas id="gameCanvas" width="624" height="624"></canvas>
+      <div id="overlay" class="hidden">
+        <div class="panel">
+          <h2 id="overlayTitle"></h2>
+          <p id="overlayMsg"></p>
+          <button id="restartBtn" type="button">重新开始</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 操作说明 -->
+    <div id="controls">
+      操作：<b>方向键 / WASD</b> 移动 · <b>空格 / J</b> 射击 · <b>R</b> 重新开始
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
